@@ -12,7 +12,7 @@ keywords = ["fieldbus", "modbus", "hardware", "automation"]
 homepage = "https://github.com/slowtec/tokio-modbus"
 repository = "https://github.com/slowtec/tokio-modbus"
 edition = "2021"
-rust-version = "1.76"
+rust-version = "1.73"
 include = ["/src", "/CHANGELOG.md", "/README.md", "/LICENSES"]
 
 [package.metadata.docs.rs]
@@ -25,13 +25,13 @@ all-features = true
 async-trait = "0.1.77"
 byteorder = "1.5.0"
 bytes = "1.5.0"
-crc = "3.3.0"
+crc = "=3.2.1"
 futures-core = { version = "0.3.30", optional = true, default-features = false }
 futures-util = { version = "0.3.30", optional = true, default-features = false }
 log = "0.4.20"
 smallvec = { version = "1.13.1", optional = true, default-features = false }
 socket2 = { version = "0.6.0", optional = true, default-features = false }
-thiserror = "2.0.3"
+thiserror = "1.0.64"
 tokio = { version = "1.35.1", default-features = false, features = ["io-util"] }
 # Disable default-features to exclude unused dependency on libudev
 tokio-serial = { version = "5.4.4", optional = true, default-features = false }
