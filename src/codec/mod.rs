@@ -594,7 +594,9 @@ fn coil_to_bool(coil: u16) -> io::Result<bool> {
 
 #[cfg(any(test, feature = "rtu", feature = "tcp"))]
 fn packed_coils_size(coils: &[Coil]) -> usize {
-    coils.len().div_ceil(8)
+    // Use integer division with rounding up to calculate the number of bytes needed
+    // Replaces: div_ceil(coils.len(), 8)
+    (coils.len() + 7) / 8
 }
 
 #[cfg(any(test, feature = "rtu", feature = "tcp"))]
